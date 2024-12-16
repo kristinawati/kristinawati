@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristinawati - Blog Pribadi</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe6f0;
+            color: #333;
+        }
+
+        header {
+            background: #ff99cc;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        nav {
+            background: #ff66b3;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h2 {
+            color: #ff66b3; /* Warna pink untuk judul */
+        }
+
+        .container p {
+            color: #333; /* Warna hitam untuk teks paragraf */
+        }
+
+        .home, .about {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+      
+
+        .about img {
+            max-width: 40%; /* Ukuran gambar menjadi 40% dari lebar kontainer */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .about p {
+            flex: 1; /* Deskripsi akan mengisi sisa ruang */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ff99cc;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kristinawati</h1>
+        <p>Blog Pribadi Saya</p>
+    </header>
+    <nav>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#about" onclick="showSection('about')">About</a>
+    </nav>
+    <div class="container">
+        <!-- Halaman Home -->
+        <div id="home" class="home active">
+            <h2>Selamat Datang di Blog Pribadi Saya</h2>
+            <p>Ini adalah blog pribadi saya di mana saya berbagi cerita, dan inspirasi. Saya berharap blog ini memberikan manfaat dan kesenangan bagi Anda.</p>
+        </div>
+
+        <!-- Halaman About -->
+        <div id="about" class="about">
+            <h2>Tentang Saya</h2>
+            <!-- Gambar Pertama -->
+            <div class="about-item">
+                <img src="main.png" alt="Foto Profil Kristinawati">
+                <p>Halo! Nama saya Kristinawati, seorang yang menyukai hal-hal kreatif, membaca, 
+                    dan menikmati momen-momen sederhana dalam hidup. Saya percaya bahwa keindahan dapat ditemukan
+                    dalam kesederhanaan dan dalam setiap pengalaman sehari-hari.</p>
+            </div>
+            <!-- Gambar dan Deskripsi Tambahan -->
+            <h2>Hobi Saya</h2>
+            <div class="about-item">
+                <img src="hobi.png" alt="Hobi Kristinawati">
+                <p>Selain membaca, saya suka menonton dan juga mendengarkan musik.
+                    Menonton dapat menjadi bentuk hiburan yang santai. Melalui cerita yang mampu menarik perhatian 
+                    kita, kita dapat menikmati momen tanpa pikiran yang kusut.
+                    Selain itu, menonton juga dapat menjadi sumber inspirasi, kreativitas dan juga dapat menjadi 
+                    sarana untuk memperluas pengetahuan kita.</p>
+            </div>
+            <h2>Cita-Cita Saya</h2>
+            <div class="about-item">
+                <img src="cita.png" alt="Hobi Kristinawati">
+                <p>Cita-cita saya,saya selalu ingin menjadi seorang pekerja kantoran. 
+                    Bekerja di kantor dengan suasana yang profesional dan teratur sangat menarik bagi saya. 
+                    Saya yakin bahwa pekerjaan ini akan memberikan saya banyak pengalaman berharga, 
+                    seperti manajemen waktu, komunikasi efektif, dan kerja sama tim.
+                    Selain itu, menjadi pekerja kantoran juga menjanjikan stabilitas finansial yang baik.
+                    Gaji yang diterima biasanya cukup memadai untuk memenuhi kebutuhan hidup sehari-hari, 
+                    ditambah dengan berbagai tunjangan dan fasilitas yang menarik.
+                    Meskipun terkadang pekerjaan di kantor dapat terasa rutin, 
+                    saya akan berusaha untuk selalu belajar, beradaptasi, dan memberikan kontribusi terbaik 
+                    bagi perusahaan tempat saya bekerja. Dengan kerja keras, disiplin, dan komitmen yang tinggi, 
+                    saya yakin bahwa cita-cita saya untuk menjadi pekerja kantoran dapat terwujud..</p>
+            </div>
+            <h2>Oke Sekian Terimakasih,Byee Byeee,,,</h2>
+        </div>
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 Kristinawati. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+       function showSection(sectionId) {
+    // Ambil semua elemen dalam container
+    const sections = document.querySelectorAll('.container > div');
+
+    // Loop untuk menyembunyikan semua elemen
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Tambahkan kelas 'active' hanya ke elemen yang dipilih
+    const activeSection = document.getElementById(sectionId);
+    if (activeSection) {
+        activeSection.classList.add('active');
+    }
+}
+</script>
+</body>
+</html>
